@@ -1,6 +1,7 @@
 package com.myblog.blog.services;
 
 import com.myblog.blog.payloads.PostDto;
+import com.myblog.blog.payloads.PostResponse;
 
 import java.util.List;
 
@@ -8,19 +9,19 @@ public interface PostService {
 
     //create
 
-    PostDto createPost(PostDto postDto, Integer userId, Integer categoryId);
+    PostResponse getAllPost(Integer pageNumber, Integer pageSize);
 
     //update
 
-    PostDto updatePost(PostDto postDto, Integer postId);
+    PostDto createPost(PostDto postDto, Integer userId, Integer categoryId);
 
     //delete
 
-    void deletePost(Integer postId);
+    PostDto updatePost(PostDto postDto, Integer postId);
 
     //get all posts
 
-    List<PostDto> getAllPost(Integer pageNumber, Integer pageSize);
+    void deletePost(Integer postId);
 
     //get single post
 
