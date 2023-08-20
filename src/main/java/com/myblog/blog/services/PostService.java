@@ -9,7 +9,7 @@ public interface PostService {
 
     //create
 
-    PostResponse getAllPost(Integer pageNumber, Integer pageSize);
+    PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
     //update
 
@@ -33,4 +33,7 @@ public interface PostService {
     //get all post by user
 
     List<PostDto> getPostsByuser(Integer userId);
+
+    //search posts
+    List<PostDto> searchPosts(String keyword);
 }

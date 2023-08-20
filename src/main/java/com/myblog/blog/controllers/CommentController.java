@@ -1,5 +1,6 @@
 package com.myblog.blog.controllers;
 
+import com.myblog.blog.payloads.ApiResponse;
 import com.myblog.blog.payloads.CommentDto;
 import com.myblog.blog.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,8 @@ public class CommentController {
     }
 
     @DeleteMapping("/comments/{commentId}")
-    public void deleteComment(@PathVariable Integer commentId) {
+    public ResponseEntity<ApiResponse> deleteComment(@PathVariable Integer commentId) {
         this.commentService.deleteComment(commentId);
+        return new ResponseEntity<ApiResponse>(new ApiResponse("Comment deleted successfully", true), HttpStatus.OK);
     }
 }
